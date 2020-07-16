@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+
+struct Story {
+    var question: String
+    var firstAnswer: String
+    var secondAnswer: String
+}
+
+
