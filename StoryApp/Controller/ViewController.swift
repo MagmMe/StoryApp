@@ -14,19 +14,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstChoiceBtn: UIButton!
     @IBOutlet weak var secondChoiceBtn: UIButton!
     
-    let Story = [
-        ["You see a fork in the road."],
-        ["Take a left."],
-        ["Take a right."]
+    let example = Story(title: "You see a fork in the road.", choice1: "Take a left.", choice2: "Take a right.")
+    
+    
+    let stories = [
+        ["You see a fork in the road.", "You see a tiger", "You find a treasuer chest"],
+        ["Take a left.", "Shout for help", "Open it" ],
+        ["Take a right.", "Play dead", "Check for traps"]
     ]
     
     var storyCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        storyLabel.text = Story[0][0]
-        firstChoiceBtn.setTitle(Story[1][0], for: .normal)
-        secondChoiceBtn.setTitle(Story[2][0], for: .normal)
+        storyLabel.text = example.storyTitle
+        firstChoiceBtn.setTitle(example.choiceOne, for: .normal)
+        secondChoiceBtn.setTitle(example.choiceTwo, for: .normal)
     }
 
     @IBAction func clickBtn(_ sender: UIButton) {

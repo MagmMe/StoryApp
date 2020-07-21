@@ -10,9 +10,15 @@ import Foundation
 
 
 struct Story {
-    var question: String
-    var firstAnswer: String
-    var secondAnswer: String
+    var storyTitle: String
+    var choiceOne: String
+    var choiceTwo: String
+    
+    init(title: String, choice1: String, choice2: String ) {
+        self.storyTitle = title
+        self.choiceOne = choice1
+        self.choiceTwo = choice2
+    }
 }
 
 
