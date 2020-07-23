@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondChoiceBtn: UIButton!
     
     let example = Story(title: "You see a fork in the road.", choice1: "Take a left.", choice2: "Take a right.")
-    
+        
     
     let stories = [
         ["You see a fork in the road.", "You see a tiger", "You find a treasuer chest"],
@@ -27,13 +27,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
+        
+    }
+
+    @IBAction func clickBtn(_ sender: UIButton) {
+         
+        let userChoice = sender.currentTitle!
+        print(userChoice)
+        
+        
+        if (userChoice == stories[1][0]){
+            storyLabel.text = stories[0][1]
+            firstChoiceBtn.setTitle(stories[1][1], for: .normal)
+            secondChoiceBtn.setTitle(stories[2][1], for: .normal)
+        }else{
+            storyLabel.text = stories[0][2]
+            firstChoiceBtn.setTitle(stories[2][1], for: .normal)
+            secondChoiceBtn.setTitle(stories[1][2], for: .normal)
+        }
+        
+        
+    }
+    
+    func updateUI(){
         storyLabel.text = example.storyTitle
         firstChoiceBtn.setTitle(example.choiceOne, for: .normal)
         secondChoiceBtn.setTitle(example.choiceTwo, for: .normal)
     }
-
-    @IBAction func clickBtn(_ sender: UIButton) {
-        print("button clicked")
+    
+    func chosenByUser(){
+        
+    
     }
     
 }
